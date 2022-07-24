@@ -1,0 +1,91 @@
+@import "../../Global.scss";
+.Topbar {
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    position: fixed;
+    color: $mainColor;
+    top: 0;
+    z-index: 5;
+    transition: all 1s ease;
+    display: flex;
+    align-items: center;
+    // justify-content: space-evenly;
+    .wrapper {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        margin: 13px auto;
+        justify-content: space-between;
+        align-items: center;
+        // border: 2px solid red;
+        .left {
+            display: flex;
+            align-items: center;
+            .logo {
+                text-decoration: none;
+                font-weight: 300;
+                color: inherit;
+                font-size: larger;
+                margin-right: 20px;
+            }
+            .itemContainer {
+                display: flex;
+                align-items: center;
+                .icons {
+                    font-size: 12px;
+                    margin-right: 4px;
+                    // color: black;
+                }
+                span {
+                    margin-right: 20px;
+                    font-size: 8px;
+                    font-weight: 700;
+                }
+                .socialIcons {
+                    width: 150px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    // border: 1px solid red;
+                }
+            }
+        }
+        .right {
+            .hamburger {
+                width: 24px;
+                height: 20px;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                cursor: pointer;
+                span {
+                    width: 100%;
+                    height: 3px;
+                    background-color: black;
+                    transform-origin: left;
+                    transition: all 1s ease;
+                }
+            }
+        }
+    }
+    &.active {
+        background-color: $mainColor;
+        color: white;
+        .hamburger {
+            span {
+                &:first-child {
+                    background-color: white;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:last-child {
+                    transform: rotate(-45deg);
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

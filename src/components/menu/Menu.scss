@@ -1,0 +1,39 @@
+@import "../../Global.scss";
+.menu {
+    width: 200px;
+    height: 100%;
+    background-color: $mainColor;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease;
+    &.active {
+        right: 0px;
+    }
+    ul {
+        list-style: none;
+        font-size: 20px;
+        // border: 2px solid red;
+        width: 70%;
+        li {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                color: white;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            &:hover {
+                font-weight: 700;
+            }
+        }
+    }
+}
